@@ -48,7 +48,7 @@ td = 8                 #
 lastUpdateTime = 0      #
 
 moveSpeed = -250
-steerVal = -5.4
+steerVal = -5.45
 #########################
 
 #######################################################################################
@@ -66,8 +66,12 @@ gyro.reset_angle(0)
 def clamp(x, minX, maxX): #OŘEZÁ HODNOTY
     return max(min(x, maxX), minX)
 
-wait(1000)
+while (touch.pressed() == False):
+    print('ready')
+    wait(10)
 
+print('pressed')
+wait(1500)
 while True:
     if(touch.pressed()):
         sys.exit()
